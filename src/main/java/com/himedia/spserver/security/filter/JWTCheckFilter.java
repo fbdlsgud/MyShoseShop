@@ -79,6 +79,9 @@ public class JWTCheckFilter extends OncePerRequestFilter {
         if(request.getMethod().equals("OPTIONS"))
             return true;
 
+        if(path.equals("/product/test"))
+            return true;
+
         if(path.startsWith("/member/login"))  // -> security formLogin의 loginPage 로 이동
             return true;
 

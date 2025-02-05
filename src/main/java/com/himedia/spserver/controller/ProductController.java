@@ -3,10 +3,7 @@ package com.himedia.spserver.controller;
 import com.himedia.spserver.entity.Product;
 import com.himedia.spserver.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +14,11 @@ public class ProductController {
 
     @Autowired
     private ProductService ps;
+
+    @GetMapping("/test")
+    public  @ResponseBody String test(){
+        return "<h1>Welcome My Shop/h1>";
+    }
 
     @GetMapping("/getBestProduct")
     public HashMap<String, Object> getBestProduct() {
